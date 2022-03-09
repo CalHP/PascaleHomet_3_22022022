@@ -6,29 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <title>Ohmyfood</title>
 </head>
 
 <body>  
 <!--________________________________ HEADER_____________________________________-->
     <header class="">
-        <!-- <div>
-            <img src="images/logo/ohmyfood.png" alt="logo_ohmyfood" title="Ohmyfood" class="ohmyfood">
-        </div> -->
         <div>
-            <img src="images/logo/ohmyfood@2x.svg" alt="logo_ohmyfood" title="Ohmyfood" class="logo_ohmyfood">
+            <img src="images/logo/ohmyfood.png" alt="logo_ohmyfood" title="Ohmyfood" class="logo_ohmyfood">
         </div>
     </header>
     <!--________________________________ END HEADER____________________________________-->
     <main>
-    <!--    DEBUT SECTION Localisation      -->
+    <!--    DEBUT SECTION LOCALISATION -->
         <section class="localisation">
-            <i class="fa-solid fa-location-dot"></i>
-        <section/>
-    <!--    FIN SECTION Localisation      -->
+            <div class="localisation__recherche">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Paris, Belleville</span>
+            </div>
+            <div class="localisation__resa">
+                <h1>Réservez le menu qui vous convient</h1>
+                <p>Découvrez des restaurants d'exception,sélectionnés par nos soins.</p>
+                <input type="button" value="Explorer nos restaurants" name="bouton_resto" class="btn">
+            </div>
+        </section>
+    <!--FIN SECTION LOCALISATION-->
+
+        <!--DEBUT SECTION FONCTIONNMENT-->
+        
+        <section class="fonctionnement">
+            <h1>Fonctionnement</h1>
+            <div class="fonctionnement__vignette vignette1">
+                <span>1</span>
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <span>Choisissez un restaurant</span>
+            </div>
+            <div class="fonctionnement__vignette vignette2">
+                <span>2</span>
+                <i class="fa-solid fa-list"></i>
+                <span>Composez votre menu</span>
+            </div>
+            <div class="fonctionnement__vignette vignette3">
+                <span>3</span>
+                <i class="fa-solid fa-store"></i>
+                <span>Dégustez au restaurant</span>
+            </div>
+        </section>
+        <!--FIN SECTION FONCTIONNEMENT-->
+
+        <!--DEBUT SECTION RESTAURANTS-->
+        <section class="restaurants">
+            <h1>Restaurants</h1>
+            <a href="#" class="restaurants__vignettes">
+                <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="présentation plat" title="présentation plat" >
+                <div>
+                    <div>
+                        <p>La palette du Goût</p>
+                        <p>Ménilmontant</p>
+                    </div>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+            </a>
+        </section>
+        <!--FIN SECTION RESTAURANTS-->
 
     </main> 
+    
+        <!--DEBUT HEADER-->
+    <footer>
+            <img src="images/logo/ohmyfood_blanc.png" alt="logo_ohmyfood" title="Ohmyfood" class="logo_ohmyfood">
+            <div>
+                <ul>
+                    <li><i class="fa-solid fa-utensils"></i>
+                        <a href="#">Proposer un restaurant</a>
+                    </li>
+                    <li><i class="fa-solid fa-handshake-angle"></i>
+                        <a href="#">Devenir partenaire</a>
+                    </li>                
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="mailto:email@exemple.com">Contacts</a></li>
+                </ul>
+            </div>
+    </footer>
+        <!--DEBUT HEADER-->
 </body>
 
 </html>

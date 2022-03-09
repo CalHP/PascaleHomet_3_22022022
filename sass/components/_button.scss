@@ -1,0 +1,12 @@
+.btn{
+    background:$color-primary;
+    padding: 15px 0;
+    border: none;
+    border-radius: 100px;
+    @include shadow($color-bg);
+    color: $color-contraste;
+    font-size: 18px;
+    font-weight:300;
+    cursor: pointer;
+    width: 55%;
+}

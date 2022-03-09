@@ -1,3 +1,23 @@
-@mixin color($color){
-    background-color: $color;
+// mixin couleur background
+@mixin color($bg){
+    background-color: $bg;
+}
+@mixin shadow($shadow){
+    box-shadow: 5px 5px 16px darken($shadow,15);
+}
+// mixin taille logo_ohmyfood
+@mixin taille-logo($taille){
+    width: $taille;
+}
+// mixin grid
+@mixin grid($column,$row, $taille-column,$taille-row){
+    display:grid;
+    grid-template-columns: repeat($column,$taille-column);
+    grid-template-rows: repeat($row,$taille-row);
+}
+// mixin flex
+@mixin flex($direction,$justify){
+    display:flex;
+    flex-direction:$direction;
+    justify-content:$justify;
 }

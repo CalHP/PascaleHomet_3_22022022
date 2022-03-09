@@ -1,0 +1,8 @@
+.fonctionnement__vignette{
+    @include color($color-bg);
+    @include shadow($color-bg);
+    width: 80%;
+    height: 20%;
+    // margin: ;
+
+}
