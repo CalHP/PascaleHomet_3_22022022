@@ -253,5 +253,12 @@ footer a {
   padding: 10% 5% 25% 5%;
   height: 100%;
 }
+.restaurants__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  padding-top: 3%;
+}
 
 /*# sourceMappingURL=style.css.map */

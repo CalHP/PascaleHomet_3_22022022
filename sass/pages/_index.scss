@@ -48,4 +48,9 @@
     margin-bottom:15%;
     padding: 10% 5% 25% 5%;
     height: 100% ;
+    &__container{
+        @include flex(column,space-around);
+        height: 100%;
+        padding-top: 3%;
+    }
 }
