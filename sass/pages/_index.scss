@@ -1,4 +1,6 @@
-// SECTION LOCALISATION
+/************************/
+/* SECTION LOCALISATION */
+/************************/
 .localisation{
     @include color($color-bg);    
     height: 100%;
@@ -28,17 +30,22 @@
         }
     }
 }
-// SECTION FONCTIONNEMENT
+/**************************/
+/* SECTION FONCTIONNEMENT */
+/**************************/
 .fonctionnement{    
     @include flex(column,space-around);
     height:100% ;
     margin: 10%;
+    h1{
+        margin-bottom: 5%;
+    }
 }
 .restaurants{
-    margin-top: 200px;
-    &__vignettes{
-        img{
-            width: 15%;
-        }
-   }
+    @include color($color-bg); 
+    @include flex(column,space-around);
+    margin-top: 15%;
+    margin-bottom:15%;
+    padding: 10% 5% 25% 5%;
+    height: 100% ;
 }

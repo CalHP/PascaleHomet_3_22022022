@@ -15,7 +15,8 @@ body {
 
 main {
   display: grid;
-  grid-template-rows: 3fr;
+  grid-template-columns: repeat(1, auto);
+  grid-template-rows: repeat(3, auto);
 }
 
 ul {
@@ -25,14 +26,16 @@ ul {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 .btn {
   background: #9356DC;
+  background: linear-gradient(to top left, #9356DC, #FF79DA);
   padding: 15px 0;
   border: none;
   border-radius: 100px;
-  box-shadow: 5px 5px 16px #d0d0d0;
+  box-shadow: 0px 0px 16px 2px #b6b6b6;
   color: #FFFFFF;
   font-size: 18px;
   font-weight: 300;
@@ -40,11 +43,124 @@ a {
   width: 55%;
 }
 
+/*****************************************/
+/* VIGNETTES PRESENTATION FONCTIONNEMENT */
+/*****************************************/
 .fonctionnement__vignette {
-  background-color: #F6F6F6;
-  box-shadow: 5px 5px 16px #d0d0d0;
-  width: 80%;
-  height: 20%;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 16px 2px #b6b6b6;
+  border-radius: 20px;
+  height: 74px;
+  text-align: center;
+  padding-top: 25px;
+  position: relative;
+}
+.fonctionnement__vignette1::before {
+  content: "1";
+  position: absolute;
+  left: -3%;
+  background-color: #9356DC;
+  color: #FFFFFF;
+  border-radius: 50%;
+  padding: 1% 2.5%;
+}
+.fonctionnement__vignette2::before {
+  content: "2";
+  position: absolute;
+  left: -3%;
+  background-color: #9356DC;
+  color: #FFFFFF;
+  border-radius: 50%;
+  padding: 1% 2.5%;
+}
+.fonctionnement__vignette3::before {
+  content: "3";
+  position: absolute;
+  left: -3%;
+  background-color: #9356DC;
+  color: #FFFFFF;
+  border-radius: 50%;
+  padding: 1% 2.5%;
+}
+.fonctionnement__vignette span {
+  font-weight: bold;
+}
+.fonctionnement__vignette i {
+  font-size: 20px;
+  margin-right: 20px;
+  margin-left: -12%;
+  color: #909090;
+}
+.fonctionnement__vignette i.fa-mobile-screen-button {
+  margin-right: 10px;
+}
+.fonctionnement__vignette:hover {
+  background-color: #f2eafb;
+}
+.fonctionnement__vignette:hover i {
+  color: #9356DC;
+}
+
+/*************************************/
+/* VIGNETTES PRESENTATION RESTAURANT */
+/*************************************/
+.restaurants__vignettes {
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 16px 2px #b6b6b6;
+  border-radius: 20px;
+  position: relative;
+  height: 280px;
+}
+.restaurants__vignettes img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  object-position: 0 95%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.restaurants__vignettes .img-resto2 {
+  object-position: 0 61%;
+}
+.restaurants__vignettes--nom {
+  font-weight: 700;
+  font-size: 20px;
+}
+.restaurants__vignettes--texte {
+  display: flex;
+  flex-direction: columns;
+  justify-content: space-between;
+  padding: 3%;
+}
+.restaurants__vignettes--texte div {
+  line-height: 30px;
+}
+.restaurants__vignettes--ville {
+  font-size: 17px;
+}
+.restaurants__vignettes i {
+  font-size: 40px;
+  padding-right: 5%;
+}
+.restaurants__vignettes1::before {
+  content: "Nouveau";
+  position: absolute;
+  background-color: #99E2D0;
+  color: #278870;
+  right: 4%;
+  top: 4%;
+  font-weight: bold;
+  padding: 1% 2.5%;
+}
+.restaurants__vignettes2::before {
+  content: "Nouveau";
+  position: absolute;
+  background-color: #99E2D0;
+  color: #278870;
+  right: 4%;
+  top: 4%;
+  font-weight: bold;
+  padding: 1% 2.5%;
 }
 
 header {
@@ -59,7 +175,7 @@ header img {
 footer {
   background-color: #353535;
   color: #FFFFFF;
-  padding: 6%;
+  padding: 23% 6% 6% 6%;
 }
 footer img {
   width: 25%;
@@ -78,6 +194,9 @@ footer a {
   font-size: 11px;
 }
 
+/************************/
+/* SECTION LOCALISATION */
+/************************/
 .localisation {
   background-color: #F6F6F6;
   height: 100%;
@@ -110,6 +229,9 @@ footer a {
   margin: 2% 22% 10% 22%;
 }
 
+/**************************/
+/* SECTION FONCTIONNEMENT */
+/**************************/
 .fonctionnement {
   display: flex;
   flex-direction: column;
@@ -117,12 +239,19 @@ footer a {
   height: 100%;
   margin: 10%;
 }
+.fonctionnement h1 {
+  margin-bottom: 5%;
+}
 
 .restaurants {
-  margin-top: 200px;
-}
-.restaurants__vignettes img {
-  width: 15%;
+  background-color: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 15%;
+  margin-bottom: 15%;
+  padding: 10% 5% 25% 5%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

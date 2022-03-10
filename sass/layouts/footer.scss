@@ -1,7 +1,8 @@
 footer{
     @include color($color-bg-footer);
     color: $color-contraste;
-    padding: 6%;
+    padding: 23% 6% 6% 6%;
+
     img{
         width: 25%;
     }
