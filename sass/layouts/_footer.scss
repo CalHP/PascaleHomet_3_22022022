@@ -1,0 +1,37 @@
+footer{
+    @include color($color-bg-footer);
+    color: $color-contraste;
+    padding: 15% 6% 6% 6%;
+    img{
+        width: 25%;
+    }
+    ul{
+        margin-top:4%;        
+        li i{
+            padding-right:2%;
+        }
+    }
+    a{
+        color: $color-contraste;
+    }
+    .fa-handshake-angle{
+        font-size:11px;
+    }
+    @media screen and (min-width:$ecran992){
+        padding-top: 9%;
+        padding-bottom:2%;
+        height: 10%;
+        img{
+            width: 10%;
+            margin-left:10%;
+        }  
+        ul{     
+            margin-top:2%;
+            margin-left: 10%;
+            li{
+                display: inline-block;
+                width: 23%;
+            }
+        }  
+    }
+}

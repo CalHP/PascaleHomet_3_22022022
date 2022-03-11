@@ -37,7 +37,11 @@
             i{
                 color: $color-primary;
             } 
-        }       
+        }  
+        @media screen and (min-width:$ecran992){
+            width: 30%;
+
+        }     
 }
 
 /*************************************/
@@ -89,5 +93,8 @@
             font-weight: bold;
             padding: 1% 2.5%;
         }
+    }
+    @media screen and (min-width:$ecran992){
+        width: 20%;
     }
 }

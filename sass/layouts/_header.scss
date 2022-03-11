@@ -5,6 +5,15 @@ header{
     text-align: center;
     img{
       width: 45%;
+      @media screen and (min-width:$ecran768) and (max-width:$ecran992){
+        margin-top: 5%;
+        width: 33%;
+      }
+      @media screen and (min-width:$ecran992){
+        width: 33%;
+        margin-top: 3%;
+        margin-left: -20%;
+      }
     }
   }
 
