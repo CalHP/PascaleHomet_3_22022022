@@ -5,7 +5,7 @@
     @include color($color-bg);    
     height: 100%;
     @media screen and (min-width:$ecran992){
-        height: 115%;
+        height: 100%;
     }
     &__recherche{
         font-size: 18px;
@@ -47,13 +47,25 @@
     @include flex(column,space-around);
     height:100% ;
     margin: 5% 10%;    
+    @media screen and (min-width:$ecran768) and (max-width:$ecran992){
+        @include color($color-bg);
+        margin: 0;
+    }
     @media screen and (min-width:$ecran992){
         @include color($color-bg);
         flex-wrap: wrap;
-        height: 115%;
+        height: 100%;
         margin:0;
+    }
     h1{
         margin:0;
+        @media screen and (min-width:$ecran768) and (max-width:$ecran992){
+            @include color(darken($color-bg,5));
+            font-size: 18px;
+            text-align: center;
+            width: 100%;
+            font-weight: 500;
+        }
         @media screen and (min-width:$ecran992){
             @include color(darken($color-bg,5));
             font-size: 20px;
@@ -61,7 +73,6 @@
             width: 100%;
             font-weight: 500;
         }
-    }
     }
     &__container{
         @include flex(column,space-around);
@@ -72,12 +83,55 @@
             width: 100%;
 
         }
-        @media screen and (min-width:$ecran768) and (max-width:$ecran992){
-            width: 76%;
-            padding:0 5%;
-
-        }
     }
+    /*****************************************/
+    /* VIGNETTES PRESENTATION FONCTIONNEMENT */
+    /*****************************************/
+    &__vignette{    
+        height: 74px;
+        text-align: center;
+        padding-top:25px;
+        position: relative;
+        // Placement des numéros 1 2 3
+        @for $i from 1 through $nb-vignettes-fct{
+            &#{$i}::before{
+                content:"#{$i}";
+                position: absolute;
+                left: -3%;
+                @include color($color-primary);
+                color:$color-contraste;
+                border-radius: 50%;
+                padding: 1% 2.5%;
+            }
+        }
+        // texte
+        span{
+            font-weight:bold;            
+        }
+        i{
+            font-size:20px;
+            margin-right: 20px;
+            margin-left:-12%;
+            color: darken($color-bg,40);
+            &.fa-mobile-screen-button{
+                margin-right: 10px;
+            }
+        } 
+        // effet au survol de la vignette
+        &:hover{
+            @include color(lighten($color-primary,35));
+            i{
+                color: $color-primary;
+            } 
+        }  
+        @media screen and (min-width:$ecran768) and (max-width:$ecran992){
+            width: 70%;
+            margin: 0 auto;
+        }
+        @media screen and (min-width:$ecran992){
+            width: 30%;
+        }     
+}
 }
 .restaurants{
     @include flex(column,space-around);
@@ -85,6 +139,9 @@
     margin-bottom:15%;
     padding: 10% 5% 25% 5%;
     height: 100% ;
+    @media screen and (min-width:$ecran768) and (max-width:$ecran992){
+        margin: 0;
+    }
     @media screen and (min-width:$ecran992){
         @include flex(row,space-around);
         @include color($color-contraste);
@@ -100,10 +157,75 @@
         @include flex(column,space-around);
         height: 100%;
         padding-top: 3%;
+        @media screen and (min-width:$ecran768) and (max-width:$ecran992){
+            @include flex(row,space-around); 
+            flex-wrap: wrap;
+            width: 100%;
+        }
         @media screen and (min-width:$ecran992){
             @include flex(row,space-around);
             flex-wrap: wrap;
             width: 100%;
         }
     }
+    /*************************************/
+    /* VIGNETTES PRESENTATION RESTAURANT */
+    /*************************************/
+    &__vignettes{    
+        position: relative;
+        height:280px;
+        img{
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            object-position: 0 95%;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+        }   
+        .img-resto2{
+            object-position: 0 61%;
+        }
+        &--nom{
+                font-weight:700;
+                font-size:20px;
+            }
+        &--texte{
+            @include flex(columns,space-between);
+            padding: 3%;
+            div{
+                line-height: 30px;
+            }
+        } 
+        &--ville{
+            font-size: 17px;
+        }
+        i{
+            font-size:40px;
+            padding-right:5%;
+            position: relative;
+            &:hover::after{
+                content: '';
+            }
+        }   
+        // Création et positionnement de l'encart 'Nouveau'
+        @for $i from 1 through $nb_nouveau{
+            &#{$i}::before{
+                content:"Nouveau";
+                position: absolute;
+                @include color($color-tertiary);
+                color: darken($color-tertiary,40);  
+                right: 4%;
+                top:4%;
+                font-weight: bold;
+                padding: 1% 2.5%;
+            }
+        }
+    @media screen and (min-width:$ecran768) and (max-width:$ecran992){
+        width: 45%;
+        margin-top:3%;
+    }
+    @media screen and (min-width:$ecran992){
+        width: 20%;
+    }
+}
 }

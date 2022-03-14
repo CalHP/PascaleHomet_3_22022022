@@ -2,12 +2,8 @@
 @mixin color($bg){
     background-color: $bg;
 }
-@mixin shadow($shadow){
-    box-shadow: 0px 0px 16px 2px darken($shadow,25);
-}
-// mixin taille logo_ohmyfood
-@mixin taille-logo($taille){
-    width: $taille;
+@mixin shadow($shadow,$intensite,$ombre){
+    box-shadow: 0px 0px $ombre 2px darken($shadow,$intensite);
 }
 // mixin grid
 @mixin grid($column,$row, $taille-column,$taille-row){

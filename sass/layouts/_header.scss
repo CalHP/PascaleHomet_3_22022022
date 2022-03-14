@@ -1,8 +1,14 @@
 // HEADER
 header{
-    height: 5em;
-    line-height: 7em;
+    display: flex;
+    justify-content: center;
+    height: 5em;    
+    padding-top:6%;
     text-align: center;
+    i{
+      font-size:25px;
+      color: darken($color-bg,70);
+    }
     img{
       width: 45%;
       @media screen and (min-width:$ecran768) and (max-width:$ecran992){

@@ -4,10 +4,14 @@
     padding: 15px 0;
     border: none;
     border-radius: 100px;
-    @include shadow($color-bg);
+    @include shadow($color-bg,25,16px);
     color: $color-contraste;
     font-size: 18px;
     font-weight:300;
     cursor: pointer;
     width: 55%;
+    &:hover{
+        background: linear-gradient(to top left, lighten($color-primary,3), lighten($color-secondary,3));
+        @include shadow($color-bg,30,25px);
+    }
 }

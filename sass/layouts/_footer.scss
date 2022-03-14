@@ -17,6 +17,19 @@ footer{
     .fa-handshake-angle{
         font-size:11px;
     }
+    @media screen and (min-width:$ecran768) and (max-width:$ecran992){
+        padding-top: 9%;
+        padding-bottom:2%;
+        height: 10%;
+        margin-top:-17%;
+        img{
+            width:20%;
+            margin-top: -4%;
+        }
+        ul{
+            margin-top: 2%;
+        }
+    }
     @media screen and (min-width:$ecran992){
         padding-top: 9%;
         padding-bottom:2%;

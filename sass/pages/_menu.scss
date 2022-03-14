@@ -1,0 +1,71 @@
+.carte{
+    @include flex(column,normal);
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    &__container{
+        @include color($color-bg);
+        border-top-left-radius: 46px;
+        border-top-right-radius: 46px;
+        margin-top: -60px;
+        padding-bottom: 18%;
+        h1{
+            font-family: Shrikhand;
+        }
+        &--menu{
+            @include flex(column,normal);
+            padding-left:7%;
+            height: 100%;
+        }
+        &--titre{
+            @include flex(row,space-between);
+            margin: 8%;
+            i{
+                font-size:30px;
+                margin-top:2%;
+            }
+        }
+        &--choix{
+            @include flex(column,space-around);
+            height: 350px;
+            margin: 5% 0;
+            & > p{
+                padding-bottom:3px;
+                border-bottom: 4px solid $color-tertiary;
+                width: 11%;
+                font-size: 18px;
+            }
+        }
+    }
+}
+.vignette__plat{
+    @include flex(row,space-between);
+    width: 90%;
+    height: 25%;
+    line-height: 25px;
+    padding: 17px 20px;
+    &--titre{
+        font-weight: bold;
+        font-size: 20px;
+    }
+    span{
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 23px;
+    }
+    // &--coche{
+    //     width: 20%;
+    //     height: 25%;
+    //     background-color: $color-tertiary;
+    //     transform-origin:50% 0; 
+    //     transform: scaleX(0);
+    // }
+    &:active{
+        
+    }
+}
+.btn-menu{
+    margin-top: 8%;
+    margin-left: 25%;
+}
