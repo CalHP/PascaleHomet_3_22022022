@@ -22,13 +22,10 @@ main{
         }
     }
     @media screen and (min-width:$ecran992){
-        @include grid(3,2,0.5fr,0.2fr);
+        @include grid(1,3,1fr,0.5fr);
         margin-top:8%;
         .fonctionnement{
-            grid-column: 2 / 4;
-        }
-        .restaurants{
-            grid-column: 1 / 4;
+            grid-row: 3 / 4;
         }
     }
 }
@@ -44,4 +41,19 @@ a{
     @include color($color-contraste);
     @include shadow($color-bg,25,16px);
     border-radius: 20px;
+}
+.heart{
+    &-empty{
+        position: absolute !important ;
+        opacity: 1;
+    }
+    &-full{
+        color: $color-secondary;
+        opacity:0;
+        transition: opacity 1s;
+        &:hover{
+            opacity: 1;
+            z-index: 2;
+        }
+    }
 }

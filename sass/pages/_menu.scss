@@ -3,9 +3,16 @@
     img{
         width: 100%;
         height: 100%;
+        @media screen and (min-width:$ecran992){
+            width: 30%;
+            height: 574px;
+            object-fit: cover;
+            margin-top: -59px;
+        }
     }
     &__container{
         @include color($color-bg);
+        @include flex(column, normal);
         border-top-left-radius: 46px;
         border-top-right-radius: 46px;
         margin-top: -60px;
@@ -17,13 +24,21 @@
             @include flex(column,normal);
             padding-left:7%;
             height: 100%;
+            @media screen and (min-width:$ecran992){
+                @include flex(row,  normal);
+                padding-left:4%;
+                padding-top:1%;
+                padding-bottom:1%;
+            }
         }
         &--titre{
             @include flex(row,space-between);
             margin: 8%;
             i{
-                font-size:30px;
-                margin-top:2%;
+                font-size:38px;
+            }
+            @media screen and (min-width:$ecran992){
+                margin: 2% 33%;
             }
         }
         &--choix{
@@ -36,8 +51,30 @@
                 width: 11%;
                 font-size: 18px;
             }
+            @media screen and (min-width:$ecran992){
+                margin: 0;
+                width: 45%;
+            }
+        }
+        @media screen and (min-width:$ecran992){
+            padding: 0;
+            padding-bottom: 2%;
+            width: 100%;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 46px;
+            margin-left: -3%;
         }
     }
+    @media screen and (min-width:$ecran992){
+        @include flex(row,normal);
+        
+    }
+}
+.fa-check{
+    color: $color-tertiary;
+    border: 1px solid $color-tertiary;
+    border-radius:50px;
+    padding: 6px;
 }
 .vignette__plat{
     @include flex(row,space-between);
@@ -45,6 +82,9 @@
     height: 25%;
     line-height: 25px;
     padding: 17px 20px;
+    position: relative;
+    cursor: pointer;
+    // transition: ;
     &--titre{
         font-weight: bold;
         font-size: 20px;
@@ -54,18 +94,49 @@
         font-size: 18px;
         margin-top: 23px;
     }
-    // &--coche{
-    //     width: 20%;
-    //     height: 25%;
-    //     background-color: $color-tertiary;
-    //     transform-origin:50% 0; 
+    &--check{
+        @include color($color-tertiary);
+        // margin: -1rem -5rem -1rem 1rem;
+        // width: 4rem;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        transition-duration: 0.5s;
+    }
+    &--icone{
+        // height: 1.6rem;
+        // width: 1.6rem;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius: 100px;
+        transition-duration: 0.5s;
+    }
+    // &:hover::after{
+    //     transition:all ease-in-out 3s;
+    //     transform: scaleX(1);
+    // }
+    // &::after{
+    //     content: "";
+    //     position:absolute;
+    //     @include color($color-tertiary);
+    //     border-top-right-radius: 20px;
+    //     border-bottom-right-radius: 20px;
+    //     left: 285px;
+    //     top: 0;
+    //     width: 22%;
+    //     height: 100%;
+    //     transform-origin:right 0%; 
     //     transform: scaleX(0);
     // }
-    &:active{
-        
-    }
 }
 .btn-menu{
     margin-top: 8%;
-    margin-left: 25%;
+    margin-left: 21%;
+    @media screen and (min-width:$ecran992){
+        margin-top: 0%;
+        margin-bottom: 1%;
+        width: 20%;
+        margin-left: 41%;
+    }
 }
