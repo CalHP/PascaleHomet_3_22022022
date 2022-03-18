@@ -45,6 +45,11 @@
             @include flex(column,space-around);
             height: 350px;
             margin: 5% 0;
+            @for $i from 1 through 3{
+                &#{$i}{
+                    animation: plat 2s ease-in-out #{$i}s both ;               
+                }
+            }
             & > p{
                 padding-bottom:3px;
                 border-bottom: 4px solid $color-tertiary;
@@ -84,7 +89,6 @@
     padding: 17px 20px;
     position: relative;
     cursor: pointer;
-    // transition: ;
     &--titre{
         font-weight: bold;
         font-size: 20px;
@@ -95,7 +99,7 @@
         margin-top: 23px;
     }
     &--check{
-        @include color($color-tertiary);
+        // @include color($color-tertiary);
         // margin: -1rem -5rem -1rem 1rem;
         // width: 4rem;
         display:flex;

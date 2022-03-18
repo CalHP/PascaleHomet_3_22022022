@@ -48,12 +48,11 @@ a{
         opacity: 1;
     }
     &-full{
+        position: relative !important;
         color: $color-secondary;
         opacity:0;
-        transition: opacity 1s;
         &:hover{
             opacity: 1;
-            z-index: 2;
         }
     }
 }

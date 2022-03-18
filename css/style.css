@@ -22,6 +22,14 @@
     z-index: -10;
   }
 }
+@keyframes plat {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 *,
 *::after,
 *::before {
@@ -84,13 +92,12 @@ a {
   opacity: 1;
 }
 .heart-full {
+  position: relative !important;
   color: #FF79DA;
   opacity: 0;
-  transition: opacity 1s;
 }
 .heart-full:hover {
   opacity: 1;
-  z-index: 2;
 }
 
 .btn {
@@ -632,6 +639,15 @@ footer .fa-handshake-angle {
   height: 350px;
   margin: 5% 0;
 }
+.carte__container--choix1 {
+  animation: plat 2s ease-in-out 1s both;
+}
+.carte__container--choix2 {
+  animation: plat 2s ease-in-out 2s both;
+}
+.carte__container--choix3 {
+  animation: plat 2s ease-in-out 3s both;
+}
 .carte__container--choix > p {
   padding-bottom: 3px;
   border-bottom: 4px solid #99E2D0;
@@ -690,7 +706,6 @@ footer .fa-handshake-angle {
   margin-top: 23px;
 }
 .vignette__plat--check {
-  background-color: #99E2D0;
   display: flex;
   align-items: center;
   justify-content: center;
