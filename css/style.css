@@ -22,12 +22,36 @@
     z-index: -10;
   }
 }
+@keyframes heart-full {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
 @keyframes plat {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes check {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes rotation-check {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 *,
@@ -67,7 +91,7 @@ main {
     margin-top: 8%;
   }
   main .fonctionnement {
-    grid-row: 3/4;
+    grid-row: 2/3;
   }
 }
 
@@ -92,7 +116,7 @@ a {
   opacity: 1;
 }
 .heart-full {
-  position: relative !important;
+  position: relative;
   color: #FF79DA;
   opacity: 0;
 }
@@ -127,6 +151,11 @@ header {
 header i {
   font-size: 25px;
   color: #444444;
+}
+@media screen and (min-width: 992px) {
+  header i {
+    margin-left: -600px;
+  }
 }
 header img {
   width: 45%;
@@ -193,7 +222,7 @@ footer .fa-handshake-angle {
 }
 @media screen and (min-width: 992px) {
   footer {
-    padding-top: 6%;
+    padding-top: 3%;
     padding-bottom: 2%;
     height: 10%;
   }
@@ -219,7 +248,7 @@ footer .fa-handshake-angle {
   top: 0;
   background-color: #F6F6F6;
   opacity: 0.9;
-  animation: loader 0.01s 2s both;
+  animation: loader 0.01s 3s both;
   z-index: 10000;
   display: flex;
   align-items: center;
@@ -227,25 +256,38 @@ footer .fa-handshake-angle {
 }
 .loader__double {
   position: relative;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   display: inline-block;
-  border-radius: 50px;
-  border: 6px solid transparent;
+  border-radius: 75px;
+  border: 15px solid transparent;
   border-top-color: #9356DC;
   border-bottom-color: #9356DC;
   animation: spin 2s linear infinite;
   transform: scale(1);
 }
+.loader__double::before {
+  content: "";
+  position: absolute;
+  border-radius: 75px;
+  top: 24px;
+  left: 24px;
+  bottom: 24px;
+  right: 24px;
+  border: 15px solid transparent;
+  border-top-color: #99E2D0;
+  border-bottom-color: #99E2D0;
+  animation: spin 5s linear infinite;
+}
 .loader__double::after {
   content: "";
   position: absolute;
-  border-radius: 50px;
-  top: 5px;
-  left: 5px;
-  bottom: 5px;
-  right: 5px;
-  border: 6px solid transparent;
+  border-radius: 75px;
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  right: 4px;
+  border: 15px solid transparent;
   border-top-color: #FF79DA;
   border-bottom-color: #FF79DA;
   animation: spin-reverse 1s linear infinite;
@@ -333,11 +375,10 @@ footer .fa-handshake-angle {
 }
 @media screen and (min-width: 992px) {
   .fonctionnement {
-    background-color: #F6F6F6;
     flex-wrap: wrap;
     height: 100%;
     margin: 0;
-    margin-top: 4%;
+    margin-top: 1%;
   }
 }
 .fonctionnement h1 {
@@ -357,14 +398,10 @@ footer .fa-handshake-angle {
 }
 @media screen and (min-width: 992px) {
   .fonctionnement h1 {
-    background-color: #e9e9e9;
-    font-size: 20px;
-    text-align: center;
+    font-size: 25px;
     width: 100%;
     font-weight: 500;
-    height: 54px;
-    margin-top: -20px;
-    padding-top: 13px;
+    margin-left: 3%;
   }
 }
 .fonctionnement__container {
@@ -378,7 +415,7 @@ footer .fa-handshake-angle {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 1% 13%;
+    padding: 1% 1%;
     height: 9em;
   }
 }
@@ -417,6 +454,11 @@ footer .fa-handshake-angle {
 }
 .fonctionnement__vignette span {
   font-weight: bold;
+}
+@media screen and (min-width: 992px) {
+  .fonctionnement__vignette span {
+    margin-left: 12px;
+  }
 }
 .fonctionnement__vignette i {
   font-size: 20px;
@@ -472,11 +514,13 @@ footer .fa-handshake-angle {
     background-color: #FFFFFF;
     flex-wrap: wrap;
     padding: 0;
-    margin: 2% 0 0 0;
+    margin: 0;
   }
   .restaurants h1 {
-    width: 40%;
-    letter-spacing: 3px;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 400;
+    margin-left: 3%;
   }
 }
 .restaurants__container {
@@ -502,6 +546,7 @@ footer .fa-handshake-angle {
     justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
+    padding: 1% 0 2% 0;
   }
 }
 .restaurants__vignettes {
@@ -639,14 +684,23 @@ footer .fa-handshake-angle {
   height: 350px;
   margin: 5% 0;
 }
-.carte__container--choix1 {
-  animation: plat 2s ease-in-out 1s both;
+.carte__container--choix1 > p {
+  animation: plat 600ms ease-in-out 0s both;
 }
-.carte__container--choix2 {
-  animation: plat 2s ease-in-out 2s both;
+.carte__container--choix1 > .vignette__plat {
+  animation: plat 2.5s ease-in-out 0s both;
 }
-.carte__container--choix3 {
-  animation: plat 2s ease-in-out 3s both;
+.carte__container--choix2 > p {
+  animation: plat 600ms ease-in-out 1s both;
+}
+.carte__container--choix2 > .vignette__plat {
+  animation: plat 2.5s ease-in-out 1s both;
+}
+.carte__container--choix3 > p {
+  animation: plat 600ms ease-in-out 2s both;
+}
+.carte__container--choix3 > .vignette__plat {
+  animation: plat 2.5s ease-in-out 2s both;
 }
 .carte__container--choix > p {
   padding-bottom: 3px;
@@ -680,9 +734,10 @@ footer .fa-handshake-angle {
 
 .fa-check {
   color: #99E2D0;
-  border: 1px solid #99E2D0;
+  background-color: #FFFFFF;
+  border: 1px solid #F6F6F6;
   border-radius: 50px;
-  padding: 6px;
+  padding: 5px;
 }
 
 .vignette__plat {
@@ -706,17 +761,28 @@ footer .fa-handshake-angle {
   margin-top: 23px;
 }
 .vignette__plat--check {
+  background-color: #99E2D0;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition-duration: 0.5s;
+  height: 88px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 74%;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
 }
-.vignette__plat--icone {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100px;
-  transition-duration: 0.5s;
+.vignette__plat:hover > .vignette__plat--check {
+  animation: check 0.7s ease-in-out both;
+}
+.vignette__plat:hover > .vignette__plat--check > .fa-check {
+  animation: rotation-check 1s ease-in-out both;
 }
 
 .btn-menu {

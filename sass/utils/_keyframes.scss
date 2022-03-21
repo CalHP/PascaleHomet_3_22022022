@@ -22,7 +22,14 @@
     }
   } 
 // Animation coeurs
-
+@keyframes heart-full{
+    0%{
+        transform: scaleY(0);
+    }
+    100%{
+        transform: scaleY(1);
+    }
+}
 // Animation carte
 @keyframes plat{
     0% {
@@ -30,5 +37,24 @@
     }
     100%{
         opacity: 1;
+    }
+}
+// Animation check
+    // div verte
+@keyframes check{
+    0%{
+        transform: scaleX(0);
+    }
+    100%{
+        transform: scaleX(1);
+    } 
+}
+    // rotation icone
+@keyframes rotation-check{
+    0%{
+        transform: rotate(90deg);
+    }
+    100%{
+        transform: rotate(360deg);
     }
 }
