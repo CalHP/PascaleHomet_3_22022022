@@ -19,36 +19,23 @@
 @keyframes loader {
   100% {
     opacity: 0;
-    z-index: -1;
-  }
-}
-@keyframes loader-body {
-  100% {
-    overflow: visible;
+    z-index: -10;
   }
 }
 @keyframes heart-full {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes menu {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes plat {
   0% {
     transform: scaleY(0);
   }
   100% {
     transform: scaleY(1);
+  }
+}
+@keyframes plat {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 @keyframes check {
@@ -57,6 +44,14 @@
   }
   100% {
     transform: scaleX(1);
+  }
+}
+@keyframes rotation-check {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 *,
@@ -246,11 +241,6 @@ footer .fa-handshake-angle {
   }
 }
 
-#body {
-  overflow: hidden;
-  animation: loader-body 0.01s 2s forwards;
-}
-
 .loader {
   position: fixed;
   height: 100%;
@@ -259,8 +249,8 @@ footer .fa-handshake-angle {
   top: 0;
   background-color: #F6F6F6;
   opacity: 0.9;
-  animation: loader 0.01s 2s forwards;
-  z-index: 2;
+  animation: loader 0.01s 3s both;
+  z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -644,11 +634,6 @@ footer .fa-handshake-angle {
     margin-top: -59px;
   }
 }
-.carte .img-lanote {
-  height: 350px;
-  object-fit: cover;
-  object-position: 0 61%;
-}
 .carte__container {
   background-color: #F6F6F6;
   display: flex;
@@ -658,12 +643,6 @@ footer .fa-handshake-angle {
   border-top-right-radius: 46px;
   margin-top: -60px;
   padding-bottom: 18%;
-}
-.carte__container-i {
-  margin-right: -17px;
-}
-.carte__container--lanote {
-  margin-top: -96px !important;
 }
 .carte__container h1 {
   font-family: Shrikhand;
@@ -703,29 +682,26 @@ footer .fa-handshake-angle {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 340px;
+  height: 350px;
   margin: 5% 0;
 }
 .carte__container--choix1 > p {
-  animation: menu 600ms ease-in-out 0s both;
+  animation: plat 600ms ease-in-out 0s both;
 }
 .carte__container--choix1 > .vignette__plat {
-  animation: menu 2.5s ease-in-out 0.4s both;
+  animation: plat 2.5s ease-in-out 0s both;
 }
 .carte__container--choix2 > p {
-  animation: menu 600ms ease-in-out 1s both;
+  animation: plat 600ms ease-in-out 1s both;
 }
 .carte__container--choix2 > .vignette__plat {
-  animation: menu 2.5s ease-in-out 1.4s both;
+  animation: plat 2.5s ease-in-out 1s both;
 }
 .carte__container--choix3 > p {
-  animation: menu 600ms ease-in-out 2s both;
+  animation: plat 600ms ease-in-out 2s both;
 }
 .carte__container--choix3 > .vignette__plat {
-  animation: menu 2.5s ease-in-out 2.4s both;
-}
-.carte__container--choix--choix4plats {
-  height: 440px;
+  animation: plat 2.5s ease-in-out 2s both;
 }
 .carte__container--choix > p {
   padding-bottom: 3px;
@@ -768,22 +744,13 @@ footer .fa-handshake-angle {
 .vignette__plat {
   display: flex;
   flex-direction: row;
-  justify-content: initial;
-  width: 95%;
-  height: 85px;
+  justify-content: space-between;
+  width: 90%;
+  height: 25%;
   line-height: 25px;
   padding: 17px 20px;
   position: relative;
   cursor: pointer;
-  transform-origin: bottom;
-  transform: scaleY(0);
-}
-.vignette__plat.vignette__plat--2lignes {
-  height: 90px;
-  padding: 10px 20px;
-}
-.vignette__plat.vignette__plat--2lignes span {
-  margin-top: 38px;
 }
 .vignette__plat--titre {
   font-weight: bold;
@@ -792,18 +759,18 @@ footer .fa-handshake-angle {
 .vignette__plat span {
   font-weight: bold;
   font-size: 18px;
-  margin: 23px 0 0 10px;
+  margin-top: 23px;
 }
 .vignette__plat--check {
   background-color: #99E2D0;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 86px;
+  height: 88px;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 81%;
+  left: 74%;
   padding-left: 25px;
   padding-right: 25px;
   border-top-right-radius: 20px;
@@ -812,44 +779,11 @@ footer .fa-handshake-angle {
   transform: scaleX(0);
   transform-origin: right;
 }
-.vignette__plat--check_2lignes {
-  height: 90px;
-}
-.vignette__plat--texte {
-  width: 85%;
-}
-.vignette__plat--texte-1ligne {
-  white-space: nowrap;
-}
-.vignette__plat--texte-1ligne > p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.vignette__plat--texte-macaron {
-  width: 87%;
-  white-space: nowrap;
-}
-.vignette__plat--texte-macaron > p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 .vignette__plat:hover > .vignette__plat--check {
-  animation: check 0.5s ease-in-out both;
+  animation: check 0.7s ease-in-out both;
 }
 .vignette__plat:hover > .vignette__plat--check > .fa-check {
-  animation: spin 1s ease-in-out both;
-}
-.vignette__plat:hover > .vignette__plat--texte {
-  width: 67%;
-  transition: width 0.5s ease-in-out;
-  white-space: nowrap;
-}
-.vignette__plat:hover > .vignette__plat--texte > p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.vignette__plat:hover > .vignette__plat--texte_2lignes {
-  white-space: normal;
+  animation: rotation-check 1s ease-in-out both;
 }
 
 .btn-menu {

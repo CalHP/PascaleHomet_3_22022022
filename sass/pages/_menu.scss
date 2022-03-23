@@ -10,11 +10,6 @@
             margin-top: -59px;
         }
     }
-    .img-lanote{
-        height: 350px;
-        object-fit: cover;
-        object-position: 0 61%;
-    }
     &__container{
         @include color($color-bg);
         @include flex(column, normal);
@@ -22,12 +17,6 @@
         border-top-right-radius: 46px;
         margin-top: -60px;
         padding-bottom: 18%;
-        &-i{
-            margin-right: -17px;
-        }
-        &--lanote{
-            margin-top: -96px !important;
-        }
         h1{
             font-family: Shrikhand;
         }
@@ -54,22 +43,16 @@
         }
         &--choix{
             @include flex(column,space-around);
-            height: 340px;
+            height: 350px;
             margin: 5% 0;
             @for $i from 1 through 3{
                 $j:calc($i - 1);
-                $k:calc($i - 0.6);
                 &#{$i} > p{
-                    // titre carte apparaissent
-                    animation: menu 600ms ease-in-out #{$j}s both ;               
+                    animation: plat 600ms ease-in-out #{$j}s both ;               
                 }
                 &#{$i} > .vignette__plat{
-                    // plats apparaissent ensemble
-                    animation: menu 2.5s ease-in-out #{$k}s both ;               
+                    animation: plat 2.5s ease-in-out #{$j}s both ;               
                 }
-            }
-            &--choix4plats{
-                height: 440px;
             }
             & > p{
                 padding-bottom:3px;
@@ -104,22 +87,13 @@
     padding: 5px;
 }
 .vignette__plat{
-    @include flex(row,initial);
-    width: 95%;
-    height: 85px;
+    @include flex(row,space-between);
+    width: 90%;
+    height: 25%;
     line-height: 25px;
     padding: 17px 20px;
     position: relative;
     cursor: pointer;
-    transform-origin: bottom;
-    transform: scaleY(0);
-    &.vignette__plat--2lignes{
-        height: 90px;
-        padding: 10px 20px;
-        span{
-            margin-top: 38px;
-        }
-    }
     &--titre{
         font-weight: bold;
         font-size: 20px;
@@ -127,18 +101,21 @@
     span{
         font-weight: bold;
         font-size: 18px;
-        margin: 23px 0 0 10px;
+        margin-top: 23px;
+    //     white-space: nowrap;
+    //     overflow: hidden;
+    //     text-overflow: ellipsis;
     }
     &--check{
         @include color($color-tertiary);
         display:flex;
         align-items:center;
         justify-content:center;
-        height: 86px;
+        height: 88px;
         top: 0;
         right: 0;
         bottom: 0;
-        left: 81%;
+        left: 74%;
         padding-left: 25px;
         padding-right: 25px;
         border-top-right-radius: 20px;
@@ -147,33 +124,12 @@
         transform: scaleX(0);
         transform-origin:right;
     }
-    &--check_2lignes{
-        height: 90px;
-    }
-    &--texte{
-        width: 85%;
-    }
-    &--texte-1ligne{
-        @include text-overflow;
-    }
-    &--texte-macaron{
-        width: 87%;
-        @include text-overflow;
-    }
     &:hover{
         & > .vignette__plat--check{
-            animation:check 0.5s ease-in-out both;
+            animation:check 0.7s ease-in-out both;
             & > .fa-check{
-                animation: spin 1s ease-in-out both;
+                animation: rotation-check 1s ease-in-out both;
             }
-        }
-        & > .vignette__plat--texte{
-            width:67%;
-            transition: width 0.5s ease-in-out ;
-            @include text-overflow;
-        }
-        & > .vignette__plat--texte_2lignes{
-            white-space: normal;
         }
     }
 }
