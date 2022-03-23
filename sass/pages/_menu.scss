@@ -10,6 +10,11 @@
             margin-top: -59px;
         }
     }
+    .img-lanote{
+        height: 350px;
+        object-fit: cover;
+        object-position: 0 61%;
+    }
     &__container{
         @include color($color-bg);
         @include flex(column, normal);
@@ -17,6 +22,12 @@
         border-top-right-radius: 46px;
         margin-top: -60px;
         padding-bottom: 18%;
+        &-i{
+            margin-right: -17px;
+        }
+        &--lanote{
+            margin-top: -96px !important;
+        }
         h1{
             font-family: Shrikhand;
         }
@@ -43,12 +54,22 @@
         }
         &--choix{
             @include flex(column,space-around);
-            height: 350px;
+            height: 340px;
             margin: 5% 0;
             @for $i from 1 through 3{
-                &#{$i}{
-                    animation: plat 2s ease-in-out #{$i}s both ;               
+                $j:calc($i - 1);
+                $k:calc($i - 0.6);
+                &#{$i} > p{
+                    // titre carte apparaissent
+                    animation: menu 600ms ease-in-out #{$j}s both ;               
                 }
+                &#{$i} > .vignette__plat{
+                    // plats apparaissent ensemble
+                    animation: menu 2.5s ease-in-out #{$k}s both ;               
+                }
+            }
+            &--choix4plats{
+                height: 440px;
             }
             & > p{
                 padding-bottom:3px;
@@ -77,18 +98,28 @@
 }
 .fa-check{
     color: $color-tertiary;
-    border: 1px solid $color-tertiary;
+    @include color($color-contraste);
+    border: 1px solid $color-bg;
     border-radius:50px;
-    padding: 6px;
+    padding: 5px;
 }
 .vignette__plat{
-    @include flex(row,space-between);
-    width: 90%;
-    height: 25%;
+    @include flex(row,initial);
+    width: 95%;
+    height: 85px;
     line-height: 25px;
     padding: 17px 20px;
     position: relative;
     cursor: pointer;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    &.vignette__plat--2lignes{
+        height: 90px;
+        padding: 10px 20px;
+        span{
+            margin-top: 38px;
+        }
+    }
     &--titre{
         font-weight: bold;
         font-size: 20px;
@@ -96,43 +127,55 @@
     span{
         font-weight: bold;
         font-size: 18px;
-        margin-top: 23px;
+        margin: 23px 0 0 10px;
     }
     &--check{
-        // @include color($color-tertiary);
-        // margin: -1rem -5rem -1rem 1rem;
-        // width: 4rem;
+        @include color($color-tertiary);
         display:flex;
         align-items:center;
         justify-content:center;
-        transition-duration: 0.5s;
+        height: 86px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 81%;
+        padding-left: 25px;
+        padding-right: 25px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        position: absolute;
+        transform: scaleX(0);
+        transform-origin:right;
     }
-    &--icone{
-        // height: 1.6rem;
-        // width: 1.6rem;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        border-radius: 100px;
-        transition-duration: 0.5s;
+    &--check_2lignes{
+        height: 90px;
     }
-    // &:hover::after{
-    //     transition:all ease-in-out 3s;
-    //     transform: scaleX(1);
-    // }
-    // &::after{
-    //     content: "";
-    //     position:absolute;
-    //     @include color($color-tertiary);
-    //     border-top-right-radius: 20px;
-    //     border-bottom-right-radius: 20px;
-    //     left: 285px;
-    //     top: 0;
-    //     width: 22%;
-    //     height: 100%;
-    //     transform-origin:right 0%; 
-    //     transform: scaleX(0);
-    // }
+    &--texte{
+        width: 85%;
+    }
+    &--texte-1ligne{
+        @include text-overflow;
+    }
+    &--texte-macaron{
+        width: 87%;
+        @include text-overflow;
+    }
+    &:hover{
+        & > .vignette__plat--check{
+            animation:check 0.5s ease-in-out both;
+            & > .fa-check{
+                animation: spin 1s ease-in-out both;
+            }
+        }
+        & > .vignette__plat--texte{
+            width:67%;
+            transition: width 0.5s ease-in-out ;
+            @include text-overflow;
+        }
+        & > .vignette__plat--texte_2lignes{
+            white-space: normal;
+        }
+    }
 }
 .btn-menu{
     margin-top: 8%;

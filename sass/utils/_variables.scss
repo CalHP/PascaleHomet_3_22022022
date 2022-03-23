@@ -7,8 +7,8 @@ $color-contraste:#FFFFFF;
 $color-primary:#9356DC;
 $color-secondary:#FF79DA;
 $color-tertiary:#99E2D0;
-$color-btn:linear-gradient(to top left, lighten($color-primary,3), lighten($color-secondary,3));
-$color-btn-light:linear-gradient(to top left, lighten($color-primary,10), lighten($color-secondary,5));
+$color-btn:linear-gradient(to top, #9356DC, #FF79DA 110%);
+$color-btn-light:linear-gradient(to top, lighten($color-primary,5), lighten($color-secondary,5));
 
 // AUTRES VARIABLES
 $nb-vignettes-fct:3;

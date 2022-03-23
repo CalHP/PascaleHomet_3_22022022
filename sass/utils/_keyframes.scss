@@ -1,4 +1,4 @@
-// Animations loader
+        // rotation icone -- Animations loader
 @keyframes spin{
     0%{
         transform:rotate(0deg);
@@ -7,6 +7,7 @@
         transform:rotate(360deg);
     }
 }
+// Animations loader
 @keyframes spin-reverse{
     0%{
         transform:rotate(0deg);
@@ -18,17 +19,47 @@
 @keyframes loader {
     100% {
       opacity: 0;
-      z-index: -10;
+      z-index: -1;
     }
-  } 
+  }
+@keyframes loader-body{
+    100% {
+        overflow: visible;
+    }
+}
 // Animation coeurs
-
+@keyframes heart-full{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity:1;
+    }
+}
 // Animation carte
-@keyframes plat{
+@keyframes menu{
     0% {
         opacity: 0;
     }
     100%{
         opacity: 1;
     }
+}
+@keyframes plat{
+    0%{
+        transform: scaleY(0);
+    }
+    100%{
+        transform: scaleY(1);
+    }
+}
+// Animation check
+    // div verte
+@keyframes check{
+    0%{
+        transform: scaleX(0);
+    }
+    100%{
+        transform: scaleX(1);
+    } 
 }
