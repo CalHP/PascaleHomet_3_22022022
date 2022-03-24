@@ -9,6 +9,21 @@
             object-fit: cover;
             margin-top: -59px;
         }
+        @media screen and (max-width:$ecran992) and (min-width:$ecran768){
+            height: 400px;
+            object-fit: cover;
+            object-position: 0 67%;
+        }
+    }
+    .img-lanote{
+        height: 350px;
+        object-fit: cover;
+        object-position: 0 61%;
+        @media screen and (min-width:$ecran992){
+            width: 30%;
+            height: auto;
+            object-position: center;
+        }
     }
     &__container{
         @include color($color-bg);
@@ -17,8 +32,14 @@
         border-top-right-radius: 46px;
         margin-top: -60px;
         padding-bottom: 18%;
-        h1{
-            font-family: Shrikhand;
+        &-i{
+            margin-right: -17px;
+        }
+        &--lanote{
+            margin-top: -96px !important;
+            @media screen and (min-width:$ecran992){
+                margin-top: -61px !important;
+            }
         }
         &--menu{
             @include flex(column,normal);
@@ -33,6 +54,7 @@
         }
         &--titre{
             @include flex(row,space-between);
+            font-family: Shrikhand;
             margin: 8%;
             i{
                 font-size:38px;
@@ -40,15 +62,26 @@
             @media screen and (min-width:$ecran992){
                 margin: 2% 33%;
             }
+            @media screen and (min-width:$ecran768) and (max-width:$ecran992){
+                justify-content: space-evenly;
+            }
         }
         &--choix{
             @include flex(column,space-around);
-            height: 350px;
+            height: 340px;
             margin: 5% 0;
             @for $i from 1 through 3{
-                &#{$i}{
-                    animation: plat 2s ease-in-out #{$i}s both ;               
+                $j:calc($i - 1);
+                $k:calc($i - 0.6);
+                &#{$i} > p{
+                    animation: menu 600ms ease-in-out #{$j}s both ;               
                 }
+                &#{$i} > .vignette__plat{
+                    animation: menu 2.5s ease-in-out #{$k}s both ;               
+                }
+            }
+            &--choix4plats{
+                height: 440px;
             }
             & > p{
                 padding-bottom:3px;
@@ -60,6 +93,10 @@
                 margin: 0;
                 width: 45%;
             }
+            @media screen and (max-width:$ecran992) and (min-width:$ecran768){
+                width: 70%;
+                margin-left: 110px;
+            }
         }
         @media screen and (min-width:$ecran992){
             padding: 0;
@@ -69,6 +106,9 @@
             border-bottom-left-radius: 46px;
             margin-left: -3%;
         }
+        @media screen and (max-width:$ecran992) and (min-width:$ecran768){
+            padding-bottom: 4%;
+        }
     }
     @media screen and (min-width:$ecran992){
         @include flex(row,normal);
@@ -77,18 +117,26 @@
 }
 .fa-check{
     color: $color-tertiary;
-    border: 1px solid $color-tertiary;
+    @include color($color-contraste);
+    border: 1px solid $color-bg;
     border-radius:50px;
-    padding: 6px;
+    padding: 5px;
 }
 .vignette__plat{
-    @include flex(row,space-between);
-    width: 90%;
-    height: 25%;
+    @include flex(row,initial);
+    width: 95%;
+    height: 90px;
     line-height: 25px;
-    padding: 17px 20px;
+    padding:20px;
     position: relative;
     cursor: pointer;
+    // mise en place vignette titre sur 2 lignes sur mobile
+    &.vignette__plat--2lignes{
+        padding: 10px 20px;
+        span{
+            margin-top: 38px;
+        }
+    }
     &--titre{
         font-weight: bold;
         font-size: 20px;
@@ -96,43 +144,80 @@
     span{
         font-weight: bold;
         font-size: 18px;
-        margin-top: 23px;
+        margin: 23px 0 0 10px;
     }
     &--check{
-        // @include color($color-tertiary);
-        // margin: -1rem -5rem -1rem 1rem;
-        // width: 4rem;
+        @include color($color-tertiary);
         display:flex;
         align-items:center;
         justify-content:center;
-        transition-duration: 0.5s;
+        height: 90px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 81%;
+        padding-left: 25px;
+        padding-right: 25px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        position: absolute;
+        transform: scaleX(0);
+        transform-origin:right;
     }
-    &--icone{
-        // height: 1.6rem;
-        // width: 1.6rem;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        border-radius: 100px;
-        transition-duration: 0.5s;
+    &--texte{
+        width: 85%;
+        @media screen and (min-width:$ecran992){
+            line-height:22px ;
+        }
     }
-    // &:hover::after{
-    //     transition:all ease-in-out 3s;
-    //     transform: scaleX(1);
-    // }
-    // &::after{
-    //     content: "";
-    //     position:absolute;
-    //     @include color($color-tertiary);
-    //     border-top-right-radius: 20px;
-    //     border-bottom-right-radius: 20px;
-    //     left: 285px;
-    //     top: 0;
-    //     width: 22%;
-    //     height: 100%;
-    //     transform-origin:right 0%; 
-    //     transform: scaleX(0);
-    // }
+    // La palette du goût mise en page vignette filet de boeuf aux herbes
+    &--texte-1ligne{
+        @include text-overflow;
+    }
+    // La palette du goût mise en page vignette macaron
+    &--texte-macaron{
+        width: 87%;
+        @include text-overflow;
+    }
+    &:hover{
+        & > .vignette__plat--check{
+            animation:check 0.5s ease-in-out both;
+            & > .fa-check{
+                animation: spin 1s ease-in-out both;
+            }
+        }
+        & > .vignette__plat--texte{
+            width:67%;
+            transition: width 0.5s ease-in-out ;
+            @include text-overflow;
+        }
+        & > .vignette__plat--texte_2lignes{
+            white-space: normal;
+        }
+    }
+    @media screen and (max-width:$ecran992) and (min-width:$ecran768){
+        padding: 20px 4px 20px 20px;
+    }
+}
+// mise en page vignette 2 lignes affichage desktop
+.vignette__plat--992{
+    @media screen and (min-width:$ecran992){
+        padding: 12px 20px;
+        span{
+            margin-top: 38px;
+        }
+        &--comment{
+            white-space: normal;
+        }
+        &--comment1{
+            white-space: nowrap;
+        }
+        &:hover{
+            & > .vignette_plat--992_texte{
+                white-space: initial;
+            }
+        }
+    }
 }
 .btn-menu{
     margin-top: 8%;
@@ -142,5 +227,9 @@
         margin-bottom: 1%;
         width: 20%;
         margin-left: 41%;
+    }
+    @media screen and (max-width:$ecran992) and (min-width:$ecran768){
+        width: 25%;
+        margin-left: 36%;
     }
 }

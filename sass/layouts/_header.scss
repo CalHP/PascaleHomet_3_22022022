@@ -8,6 +8,10 @@ header{
     i{
       font-size:25px;
       color: darken($color-bg,70);
+      @media screen and (min-width:$ecran992){
+        margin-left: -600px;
+      }
+
     }
     img{
       width: 45%;

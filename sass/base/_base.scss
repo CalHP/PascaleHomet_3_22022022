@@ -15,17 +15,14 @@ body {
 main{
     @include grid(1,3,auto,auto);
     @media screen and (min-width:$ecran768) and (max-width:$ecran992){
-        @include grid(2,2,0.5fr,0.2fr);
+        @include grid(1,3,1fr,0.2fr);
         margin-top:8%;
-        .restaurants{
-            grid-column: 1 / 3;
-        }
     }
     @media screen and (min-width:$ecran992){
         @include grid(1,3,1fr,0.5fr);
         margin-top:8%;
         .fonctionnement{
-            grid-row: 3 / 4;
+            grid-row: 2 / 3;
         }
     }
 }
@@ -41,6 +38,7 @@ a{
     @include color($color-contraste);
     @include shadow($color-bg,25,16px);
     border-radius: 20px;
+    transform-origin: bottom;
 }
 .heart{
     &-empty{
@@ -49,10 +47,13 @@ a{
     }
     &-full{
         position: relative !important;
-        color: $color-secondary;
-        opacity:0;
+        color: transparent;      
+        opacity:0;        
         &:hover{
             opacity: 1;
+            z-index: 2; 
+            background: -webkit-linear-gradient(top, #9356DC 50%, #FF79DA 100%);
+            transition: all 1s ease-in-out;
         }
     }
 }

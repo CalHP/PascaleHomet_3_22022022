@@ -17,3 +17,10 @@
     flex-direction:$direction;
     justify-content:$justify;
 }
+@mixin text-overflow{
+    white-space: nowrap;
+    & > p{
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
