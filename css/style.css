@@ -27,12 +27,28 @@
     overflow: visible;
   }
 }
+@keyframes heart-full {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes menu {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes slide {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
   }
 }
 @keyframes check {
@@ -63,9 +79,7 @@ main {
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
   main {
-    display: grid;
-    grid-template-columns: repeat(1, auto);
-    grid-template-rows: repeat(3, auto);
+    display: block;
     margin-top: 8%;
   }
   main .fonctionnement {
@@ -106,17 +120,18 @@ a {
 
 .heart-empty {
   position: absolute !important;
+  opacity: 1;
 }
 .heart-full {
   position: relative !important;
   color: transparent;
+  background-clip: text;
+  background-image: -webkit-linear-gradient(top, #9356DC 20%, #FF79DA 100%);
   opacity: 0;
 }
 .heart-full:hover {
   opacity: 1;
-  z-index: 2;
-  background: -webkit-linear-gradient(top, #9356DC 50%, #FF79DA 100%);
-  transition: all 1s ease-in-out;
+  animation: heart-full 1s both;
 }
 
 .btn {
@@ -353,7 +368,7 @@ footer .fa-handshake-angle {
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .localisation__resa p {
     margin: 0;
-    margin-top: 3%;
+    margin-top: 1%;
   }
 }
 .localisation__resa input {
@@ -369,8 +384,7 @@ footer .fa-handshake-angle {
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .localisation__resa input {
     width: 30%;
-    margin-top: 5%;
-    margin: 5% auto 10% auto;
+    margin: 3% auto 4% auto;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -446,7 +460,7 @@ footer .fa-handshake-angle {
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .fonctionnement__container {
-    margin: 0 12% auto 12%;
+    margin: 0 12% 5% 12%;
     height: 20em;
   }
 }
@@ -535,6 +549,7 @@ footer .fa-handshake-angle {
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .restaurants {
+    background-color: #F6F6F6;
     margin: 0;
     padding-top: 4%;
     padding-bottom: 10%;
@@ -751,24 +766,6 @@ footer .fa-handshake-angle {
   height: 340px;
   margin: 5% 0;
 }
-.carte__container--choix1 > p {
-  animation: menu 600ms ease-in-out 0s both;
-}
-.carte__container--choix1 > .vignette__plat {
-  animation: menu 2.5s ease-in-out 0.4s both;
-}
-.carte__container--choix2 > p {
-  animation: menu 600ms ease-in-out 1s both;
-}
-.carte__container--choix2 > .vignette__plat {
-  animation: menu 2.5s ease-in-out 1.4s both;
-}
-.carte__container--choix3 > p {
-  animation: menu 600ms ease-in-out 2s both;
-}
-.carte__container--choix3 > .vignette__plat {
-  animation: menu 2.5s ease-in-out 2.4s both;
-}
 .carte__container--choix--choix4plats {
   height: 440px;
 }
@@ -831,6 +828,9 @@ footer .fa-handshake-angle {
   padding: 20px;
   position: relative;
   cursor: pointer;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  animation: slide 600ms ease-in-out forwards;
 }
 .vignette__plat.vignette__plat--2lignes {
   padding: 10px 20px;

@@ -75,16 +75,16 @@
             height: 340px;
             margin: 5% 0;
             // animation apparition des plats
-            @for $i from 1 through 3{
-                $j:calc($i - 1);
-                $k:calc($i - 0.6);
-                &#{$i} > p{
-                    animation: menu 600ms ease-in-out #{$j}s both ;               
-                }
-                &#{$i} > .vignette__plat{
-                    animation: menu 2.5s ease-in-out #{$k}s both ;               
-                }
-            }
+            // @for $i from 1 through 3{
+            //     $j:calc($i - 1);
+            //     $k:calc($i - 0.6);
+            //     &#{$i} > p{
+            //         animation: menu 600ms ease-in-out #{$j}s both ;               
+            //     }
+            //     &#{$i} > .vignette__plat{
+            //             animation: slide 1s #{$k} forwards;              
+            //     }
+            // }
             // Présentation cartes 4 plats La note enchantée
             &--choix4plats{
                 height: 440px;
@@ -138,6 +138,9 @@
     padding:20px;
     position: relative;
     cursor: pointer;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    animation: slide 600ms ease-in-out forwards; 
     // mise en place vignette titre sur 2 lignes sur mobile
     &.vignette__plat--2lignes{
         padding: 10px 20px;

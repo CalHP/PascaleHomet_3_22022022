@@ -27,13 +27,32 @@
         overflow: visible;
     }
 }
+// Animation coeurs
+@keyframes heart-full{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity:1;
+    }
+}
 // Animation carte
+    // apparition entrée
 @keyframes menu{
     0% {
         opacity: 0;
     }
     100%{
         opacity: 1;
+    }
+}
+    // apparition vignettes plat
+@keyframes slide{
+    0%{
+        transform: scaleY(0);
+    }
+    100%{
+        transform: scaleY(1);
     }
 }
 // Animation check
