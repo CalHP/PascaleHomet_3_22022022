@@ -44,8 +44,8 @@ a{
 .vignette{
     @include color($color-contraste);
     @include shadow($color-bg,25,16px);
-    border-radius: 20px;
     transform-origin: bottom;
+    border-radius: 20px;
 }
 // Animations remplissage des coeurs 
 .heart{
@@ -57,7 +57,7 @@ a{
         position: relative !important;
         color: transparent;
         background-clip: text;
-        background-image: -webkit-linear-gradient(top, #9356DC 20%, #FF79DA 100%);
+        background-image: -webkit-linear-gradient(top, #9356DC 5%, #FF79DA 100%);
         opacity:0;
         &:hover{
             opacity: 1;

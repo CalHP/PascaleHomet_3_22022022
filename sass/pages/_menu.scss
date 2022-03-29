@@ -1,6 +1,6 @@
 // Page menu
 .carte{
-    @include flex(column,normal);
+    @include flex(column,normal);    
     img{
         width: 100%;
         height: 100%;
@@ -75,16 +75,16 @@
             height: 340px;
             margin: 5% 0;
             // animation apparition des plats
-            // @for $i from 1 through 3{
-            //     $j:calc($i - 1);
-            //     $k:calc($i - 0.6);
-            //     &#{$i} > p{
-            //         animation: menu 600ms ease-in-out #{$j}s both ;               
-            //     }
-            //     &#{$i} > .vignette__plat{
-            //             animation: slide 1s #{$k} forwards;              
-            //     }
-            // }
+            @for $i from 1 through 3{
+                $j:calc($i - 1);
+                $k:$j + 0.1;
+                &#{$i} > p{
+                    animation: menu 600ms ease-in-out #{$j}s both ;               
+                }
+                &#{$i} > .vignette__plat{
+                    animation: slide 1s ease-in-out #{$k}s forwards;               
+                }
+            }
             // Présentation cartes 4 plats La note enchantée
             &--choix4plats{
                 height: 440px;
@@ -97,7 +97,7 @@
             }
             @media screen and (min-width:$ecran992){
                 margin: 0;
-                width: 45%;
+                width: 33%;
             }
             @media screen and (max-width:$ecran992) and (min-width:$ecran768){
                 width: 70%;
@@ -107,7 +107,7 @@
         @media screen and (min-width:$ecran992){
             padding: 0;
             padding-bottom: 2%;
-            width: 100%;
+            width: 90%;
             border-top-right-radius: 0;
             border-bottom-left-radius: 46px;
             margin-left: -3%;
@@ -118,7 +118,6 @@
     }
     @media screen and (min-width:$ecran992){
         @include flex(row,normal);
-        
     }
 }
 // Icone check de la div vignette__plat--check
@@ -139,18 +138,16 @@
     position: relative;
     cursor: pointer;
     transform: scaleY(0);
-    transform-origin: bottom;
-    animation: slide 600ms ease-in-out forwards; 
-    // mise en place vignette titre sur 2 lignes sur mobile
-    &.vignette__plat--2lignes{
-        padding: 10px 20px;
-        span{
-            margin-top: 38px;
-        }
-    }
+    white-space: nowrap;
     &--titre{
         font-weight: bold;
         font-size: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &--commentaire{
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     span{
         font-weight: bold;
@@ -182,15 +179,6 @@
             line-height:22px ;
         }
     }
-    // La palette du goût mise en page vignette filet de boeuf aux herbes
-    &--texte-1ligne{
-        @include text-overflow;
-    }
-    // La palette du goût mise en page vignette macaron
-    &--texte-macaron{
-        width: 87%;
-        @include text-overflow;
-    }
     // Apparition de la div check au survol
     &:hover{
         & > .vignette__plat--check{
@@ -204,34 +192,12 @@
             transition: width 0.5s ease-in-out ;
             @include text-overflow;
         }
-        & > .vignette__plat--texte_2lignes{
-            white-space: normal;
-        }
     }
     @media screen and (max-width:$ecran992) and (min-width:$ecran768){
         padding: 20px 4px 20px 20px;
     }
 }
-// mise en page vignette 2 lignes affichage desktop
-.vignette__plat--992{
-    @media screen and (min-width:$ecran992){
-        padding: 12px 20px;
-        span{
-            margin-top: 38px;
-        }
-        &--comment{
-            white-space: normal;
-        }
-        &--comment1{
-            white-space: nowrap;
-        }
-        &:hover{
-            & > .vignette_plat--992_texte{
-                white-space: initial;
-            }
-        }
-    }
-}
+
 .btn-menu{
     margin-top: 8%;
     margin-left: 21%;

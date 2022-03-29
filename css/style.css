@@ -114,8 +114,8 @@ a {
 .vignette {
   background-color: #FFFFFF;
   box-shadow: 0px 0px 16px 2px #b6b6b6;
-  border-radius: 20px;
   transform-origin: bottom;
+  border-radius: 20px;
 }
 
 .heart-empty {
@@ -126,7 +126,7 @@ a {
   position: relative !important;
   color: transparent;
   background-clip: text;
-  background-image: -webkit-linear-gradient(top, #9356DC 20%, #FF79DA 100%);
+  background-image: -webkit-linear-gradient(top, #9356DC 5%, #FF79DA 100%);
   opacity: 0;
 }
 .heart-full:hover {
@@ -766,6 +766,24 @@ footer .fa-handshake-angle {
   height: 340px;
   margin: 5% 0;
 }
+.carte__container--choix1 > p {
+  animation: menu 600ms ease-in-out 0s both;
+}
+.carte__container--choix1 > .vignette__plat {
+  animation: slide 1s ease-in-out 0.1s forwards;
+}
+.carte__container--choix2 > p {
+  animation: menu 600ms ease-in-out 1s both;
+}
+.carte__container--choix2 > .vignette__plat {
+  animation: slide 1s ease-in-out 1.1s forwards;
+}
+.carte__container--choix3 > p {
+  animation: menu 600ms ease-in-out 2s both;
+}
+.carte__container--choix3 > .vignette__plat {
+  animation: slide 1s ease-in-out 2.1s forwards;
+}
 .carte__container--choix--choix4plats {
   height: 440px;
 }
@@ -778,7 +796,7 @@ footer .fa-handshake-angle {
 @media screen and (min-width: 992px) {
   .carte__container--choix {
     margin: 0;
-    width: 45%;
+    width: 33%;
   }
 }
 @media screen and (max-width: 992px) and (min-width: 768px) {
@@ -791,7 +809,7 @@ footer .fa-handshake-angle {
   .carte__container {
     padding: 0;
     padding-bottom: 2%;
-    width: 100%;
+    width: 90%;
     border-top-right-radius: 0;
     border-bottom-left-radius: 46px;
     margin-left: -3%;
@@ -829,18 +847,17 @@ footer .fa-handshake-angle {
   position: relative;
   cursor: pointer;
   transform: scaleY(0);
-  transform-origin: bottom;
-  animation: slide 600ms ease-in-out forwards;
-}
-.vignette__plat.vignette__plat--2lignes {
-  padding: 10px 20px;
-}
-.vignette__plat.vignette__plat--2lignes span {
-  margin-top: 38px;
+  white-space: nowrap;
 }
 .vignette__plat--titre {
   font-weight: bold;
   font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vignette__plat--commentaire {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .vignette__plat span {
   font-weight: bold;
@@ -873,21 +890,6 @@ footer .fa-handshake-angle {
     line-height: 22px;
   }
 }
-.vignette__plat--texte-1ligne {
-  white-space: nowrap;
-}
-.vignette__plat--texte-1ligne > p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.vignette__plat--texte-macaron {
-  width: 87%;
-  white-space: nowrap;
-}
-.vignette__plat--texte-macaron > p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 .vignette__plat:hover > .vignette__plat--check {
   animation: check 0.5s ease-in-out both;
 }
@@ -903,30 +905,9 @@ footer .fa-handshake-angle {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.vignette__plat:hover > .vignette__plat--texte_2lignes {
-  white-space: normal;
-}
 @media screen and (max-width: 992px) and (min-width: 768px) {
   .vignette__plat {
     padding: 20px 4px 20px 20px;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .vignette__plat--992 {
-    padding: 12px 20px;
-  }
-  .vignette__plat--992 span {
-    margin-top: 38px;
-  }
-  .vignette__plat--992--comment {
-    white-space: normal;
-  }
-  .vignette__plat--992--comment1 {
-    white-space: nowrap;
-  }
-  .vignette__plat--992:hover > .vignette_plat--992_texte {
-    white-space: initial;
   }
 }
 
