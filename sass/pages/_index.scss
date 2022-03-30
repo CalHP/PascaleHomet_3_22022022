@@ -4,7 +4,7 @@
     overflow:hidden;
     animation: loader-body 0.01s 2s forwards;
 }
-    // Création du loader triple
+    // Création et animation du loader triple
 .loader{
     position: fixed;
     height: 100%;
@@ -13,7 +13,7 @@
     top: 0;
     background-color: $color-bg;
     opacity: 0.9;
-    animation: loader 0.01s 2s forwards;
+    animation: div-loader 0.01s 2s forwards;
     z-index: 2;
     display:flex;
     align-items:center;
@@ -106,7 +106,7 @@
                 margin-top: 1%;
             }
         }
-        // Bouton recheche
+        // Bouton recherche
         input{
             margin: 2% 22% 10% 22%;
             margin-top: 10%;
@@ -228,6 +228,7 @@
 }
 }
 .restaurants{
+    // Mise en page div restaurants
     @include flex(column,space-around);
     margin-top: 15%;
     margin-bottom:15%;
@@ -281,6 +282,7 @@
     &__vignettes{    
         position: relative;
         height:280px;
+        white-space: nowrap;
         img{
             width: 100%;
             height: 70%;
@@ -297,7 +299,7 @@
                 font-size:20px;
             }
         &--texte{
-            @include flex(columns,space-between);
+            @include flex(row,space-between);
             padding: 3%;
             div{
                 line-height: 30px;

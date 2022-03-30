@@ -16,7 +16,7 @@
     transform: rotate(-360deg);
   }
 }
-@keyframes loader {
+@keyframes div-loader {
   100% {
     opacity: 0;
     z-index: -1;
@@ -157,6 +157,7 @@ header {
   height: 5em;
   padding-top: 6%;
   text-align: center;
+  margin-bottom: 13px;
 }
 header i {
   font-size: 25px;
@@ -164,7 +165,13 @@ header i {
 }
 @media screen and (min-width: 992px) {
   header i {
-    margin-left: -600px;
+    margin-left: -250px;
+    margin-top: 5px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  header i {
+    margin-top: 15px;
   }
 }
 header img {
@@ -180,7 +187,6 @@ header img {
 @media screen and (min-width: 992px) {
   header img {
     width: 100%;
-    margin-left: -127%;
     margin-top: -4%;
     margin-bottom: 12%;
   }
@@ -263,7 +269,7 @@ footer .fa-handshake-angle {
   top: 0;
   background-color: #F6F6F6;
   opacity: 0.9;
-  animation: loader 0.01s 2s forwards;
+  animation: div-loader 0.01s 2s forwards;
   z-index: 2;
   display: flex;
   align-items: center;
@@ -604,6 +610,7 @@ footer .fa-handshake-angle {
 .restaurants__vignettes {
   position: relative;
   height: 280px;
+  white-space: nowrap;
 }
 .restaurants__vignettes img {
   width: 100%;
@@ -622,7 +629,7 @@ footer .fa-handshake-angle {
 }
 .restaurants__vignettes--texte {
   display: flex;
-  flex-direction: columns;
+  flex-direction: row;
   justify-content: space-between;
   padding: 3%;
 }
@@ -809,7 +816,7 @@ footer .fa-handshake-angle {
   .carte__container {
     padding: 0;
     padding-bottom: 2%;
-    width: 90%;
+    width: 78%;
     border-top-right-radius: 0;
     border-bottom-left-radius: 46px;
     margin-left: -3%;

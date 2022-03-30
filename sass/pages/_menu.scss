@@ -89,12 +89,14 @@
             &--choix4plats{
                 height: 440px;
             }
+            // Mise en forme texte vignette + bordure verte
             & > p{
                 padding-bottom:3px;
                 border-bottom: 4px solid $color-tertiary;
                 width: 11%;
                 font-size: 18px;
             }
+            // mediaqueries choix
             @media screen and (min-width:$ecran992){
                 margin: 0;
                 width: 33%;
@@ -104,10 +106,11 @@
                 margin-left: 110px;
             }
         }
+        // mediaqueries container
         @media screen and (min-width:$ecran992){
             padding: 0;
             padding-bottom: 2%;
-            width: 90%;
+            width: 78%;
             border-top-right-radius: 0;
             border-bottom-left-radius: 46px;
             margin-left: -3%;
@@ -116,6 +119,7 @@
             padding-bottom: 4%;
         }
     }
+    // mediaqueries carte
     @media screen and (min-width:$ecran992){
         @include flex(row,normal);
     }

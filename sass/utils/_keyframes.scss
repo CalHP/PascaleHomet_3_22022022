@@ -16,12 +16,14 @@
         transform:rotate(-360deg);
     }
 }
-@keyframes loader {
+    // Mise en page div loader
+@keyframes div-loader {
     100% {
       opacity: 0;
       z-index: -1;
     }
   }
+    // Réapparition barre de défilement après div loader
 @keyframes loader-body{
     100% {
         overflow: visible;
@@ -37,7 +39,7 @@
     }
 }
 // Animation carte
-    // apparition entrée
+    // apparition catégorie plats
 @keyframes menu{
     0% {
         opacity: 0;
