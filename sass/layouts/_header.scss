@@ -11,7 +11,7 @@ header{
       color: darken($color-bg,70);
       @media screen and (min-width:$ecran992){
         margin-left: -250px;
-        margin-top: 5px;
+        margin-top: 23px;
       }
       @media screen and (min-width:$ecran768) and (max-width:$ecran992){
         margin-top: 15px;
@@ -22,19 +22,16 @@ header{
       @media screen and (min-width:$ecran768) and (max-width:$ecran992){
         margin-top: 1%;
         width: 75%;
-        margin-left: -60%;
       }
       @media screen and (min-width:$ecran992){
         width: 100%;
-        margin-top: -4%;
-        margin-bottom: 12%;
       }
     }
     @media screen and (min-width:$ecran768) and (max-width:$ecran992){
         justify-content:space-around;
     }
     @media screen and (min-width:$ecran992){
-      padding-top:4%;
+      padding-top:3%;
     }
   }
 
