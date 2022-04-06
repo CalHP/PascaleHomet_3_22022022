@@ -56,6 +56,7 @@ a{
     &-full{
         position: relative !important;
         color: transparent;
+        background-clip: text;
         -webkit-background-clip: text;
         background-image: -webkit-linear-gradient(top, #9356DC 5%, #FF79DA 100%);  
         opacity:0;
