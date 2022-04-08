@@ -12,23 +12,16 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-main{
-    @include grid(1,3,auto,auto);
+#main_index{
+    @include flex(column,space-around);
     @media screen and (min-width:$ecran768) and (max-width:$ecran992){
         display: block;
         margin-top:8%;
-        .fonctionnement{
-            grid-row: 2 /3;
-        }
-        .restaurants{
-            grid-row: 3 / 4;
-        }
+
     }
     @media screen and (min-width:$ecran992){
-        @include grid(1,3,1fr,0.2fr);
-        .fonctionnement{
-            grid-row: 2 / 3;
-        }
+       
+
     }
 }
 ul{

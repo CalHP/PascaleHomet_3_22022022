@@ -72,34 +72,17 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-main {
-  display: grid;
-  grid-template-columns: repeat(1, auto);
-  grid-template-rows: repeat(3, auto);
+#main_index {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  main {
+  #main_index {
     display: block;
     margin-top: 8%;
   }
-  main .fonctionnement {
-    grid-row: 2/3;
-  }
-  main .restaurants {
-    grid-row: 3/4;
-  }
 }
-@media screen and (min-width: 992px) {
-  main {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(3, 0.2fr);
-  }
-  main .fonctionnement {
-    grid-row: 2/3;
-  }
-}
-
 ul {
   list-style-type: none;
   line-height: 30px;
@@ -190,13 +173,14 @@ header img {
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
   header {
-    justify-content: space-around;
+    height: auto;
+    margin-bottom: 3%;
   }
 }
 @media screen and (min-width: 992px) {
   header {
     padding-top: 3%;
-    padding-bottom: 7%;
+    margin-bottom: 9%;
   }
 }
 
@@ -222,13 +206,11 @@ footer .fa-handshake-angle {
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
   footer {
-    padding-top: 9%;
+    padding-top: 5%;
     padding-bottom: 2%;
-    height: 10%;
   }
   footer img {
-    width: 20%;
-    margin-top: -4%;
+    width: 14%;
   }
   footer ul {
     margin-top: 2%;
@@ -316,17 +298,9 @@ footer .fa-handshake-angle {
 /************************/
 .localisation {
   background-color: #F6F6F6;
-  height: 100%;
-}
-@media screen and (min-width: 992px) {
-  .localisation {
-    height: 100%;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 992px) {
-  .localisation {
-    height: 60%;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .localisation__recherche {
   font-size: 18px;
@@ -339,9 +313,6 @@ footer .fa-handshake-angle {
   padding-left: 2%;
 }
 .localisation__resa {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(3, 0.5fr);
   text-align: center;
 }
 .localisation__resa h1 {
@@ -387,14 +358,12 @@ footer .fa-handshake-angle {
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .localisation__resa input {
     width: 30%;
-    margin: 3% auto 4% auto;
+    margin: 4% auto 4% auto;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .localisation__resa {
-    height: 100%;
-    padding: 0;
-    padding-top: 2%;
+    padding: 5% 0 1% 0;
   }
 }
 
@@ -425,7 +394,7 @@ footer .fa-handshake-angle {
   }
 }
 .fonctionnement h1 {
-  margin: 0;
+  margin: 0 0 4% 0;
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .fonctionnement h1 {
@@ -443,7 +412,7 @@ footer .fa-handshake-angle {
     font-size: 25px;
     width: 100%;
     font-weight: 500;
-    margin-left: 3%;
+    margin: 0 0 2% 3%;
   }
 }
 .fonctionnement__container {
@@ -539,25 +508,25 @@ footer .fa-handshake-angle {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin-top: 15%;
-  margin-bottom: 15%;
-  padding: 10% 5% 25% 5%;
-  height: 100%;
+  padding: 10% 5% 15% 5%;
   /*************************************/
   /* VIGNETTES PRESENTATION RESTAURANT */
   /*************************************/
 }
 .restaurants h1 {
   font-weight: 500;
+  margin: 0 0 5% 0;
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .restaurants {
+    background-color: #F6F6F6;
     margin: 0;
     padding-top: 4%;
     padding-bottom: 10%;
   }
   .restaurants h1 {
     text-align: center;
+    margin: 0;
   }
 }
 @media screen and (min-width: 992px) {
@@ -565,25 +534,24 @@ footer .fa-handshake-angle {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: #FFFFFF;
+    background-color: #F6F6F6;
     flex-wrap: wrap;
-    padding: 0;
-    margin: 3% 0 3% 0;
+    padding: 1% 0 3% 0;
     height: auto;
   }
   .restaurants h1 {
     width: 100%;
     font-size: 25px;
     font-weight: 500;
-    margin-left: 3%;
+    margin: 0 0 2% 3%;
   }
 }
 .restaurants__container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 100%;
+  justify-content: space-between;
   padding-top: 3%;
+  height: 75em;
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .restaurants__container {
@@ -591,6 +559,7 @@ footer .fa-handshake-angle {
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+    height: auto;
     width: 100%;
   }
 }
@@ -601,6 +570,7 @@ footer .fa-handshake-angle {
     justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
+    height: auto;
     padding: 1% 0 2% 0;
   }
 }
