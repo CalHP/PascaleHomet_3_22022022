@@ -94,7 +94,6 @@ main {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(3, 0.2fr);
-    margin-top: 5%;
   }
   main .fonctionnement {
     grid-row: 2/3;
@@ -197,6 +196,7 @@ header img {
 @media screen and (min-width: 992px) {
   header {
     padding-top: 3%;
+    padding-bottom: 7%;
   }
 }
 
@@ -236,8 +236,8 @@ footer .fa-handshake-angle {
 }
 @media screen and (min-width: 992px) {
   footer {
-    padding-top: 3%;
-    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-bottom: 1%;
     height: 10%;
   }
   footer img {
@@ -829,6 +829,7 @@ footer .fa-handshake-angle {
     display: flex;
     flex-direction: row;
     justify-content: normal;
+    margin-top: 4%;
   }
 }
 

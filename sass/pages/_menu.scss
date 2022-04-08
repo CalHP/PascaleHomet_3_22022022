@@ -122,6 +122,7 @@
     // mediaqueries carte
     @media screen and (min-width:$ecran992){
         @include flex(row,normal);
+        margin-top: 4%;
     }
 }
 // Icone check de la div vignette__plat--check

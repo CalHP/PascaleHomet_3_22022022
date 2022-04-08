@@ -26,7 +26,6 @@ main{
     }
     @media screen and (min-width:$ecran992){
         @include grid(1,3,1fr,0.2fr);
-        margin-top:5%;
         .fonctionnement{
             grid-row: 2 / 3;
         }
